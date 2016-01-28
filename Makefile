@@ -12,6 +12,9 @@ Makefile.coq: Makefile $(COQTHEORIES)
 theories: Makefile.coq
 	$(MAKE) -f Makefile.coq
 
+%.vo: Makefile.coq
+	$(MAKE) -f Makefile.coq "$@"
+
 clean:
 	$(MAKE) -f Makefile.coq clean
 	rm -f Makefile.coq
